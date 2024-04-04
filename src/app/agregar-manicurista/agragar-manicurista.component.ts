@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from '../service/usuario.service';
 import { Subject } from 'rxjs';
@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./agragar-manicurista.component.css']
 })
 export class AgragarManicuristaComponent implements OnInit {
+  screenWidth: number;
   form: FormGroup;
   editMode = false;
   selectedFile: File | null = null;
@@ -23,6 +24,7 @@ export class AgragarManicuristaComponent implements OnInit {
   private searchTerm$ = new Subject<string>();
 
   constructor(private fb: FormBuilder, private usuarioService: UsuarioService) {
+    this.screenWidth = window.innerWidth;
     this.form = this.fb.group({
      id_manicurista:[''],
       nombre: ['', Validators.required],
@@ -64,6 +66,11 @@ export class AgragarManicuristaComponent implements OnInit {
       modal.style.display = 'block';
     }
   }
+  isSmallScreen() {
+    return this.screenWidth <= 480;
+  }
+
+  
   
   cerrarModal(): void {
     const modal = document.getElementById('myModal');

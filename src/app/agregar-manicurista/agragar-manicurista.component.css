@@ -336,7 +336,7 @@ margin-top: 15px;
   .button-container{
     padding-bottom: 20px;
   }
-  @media screen and (max-width: 767px) {
+  @media screen and (min-width:601px) and (max-width: 768px) {
     .contenedorPrincipal {
       display: flex;
       justify-content: space-around;
@@ -347,6 +347,7 @@ margin-top: 15px;
       position: relative;
       left: 200px;
     }
+    
     .form {
       width: 90%;
       max-width: 90%;
@@ -360,4 +361,91 @@ margin-top: 15px;
     .modal-content {
       width: 90%;
     }
+  }
+
+
+  @media screen and (min-width:390px) and (max-width: 600px)  {
+    .contenedorPrincipal {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      width: 390px; 
+      padding: 15px;
+      
+    }
+    table{
+      display: none;
+    }
+    .lupa{
+      position: relative;
+      left: 200px;
+    }
+    .form {
+      width: 90%;
+      max-width: 90%;
+      margin-bottom: 20px;
+    }
+  
+    
+   thead tr{
+    display: flex;
+    flex-direction: column;
+    
+   }
+   
+   tbody .two{
+    display: flex;
+    flex-direction: column;
+    
+   }
+    .modal-content {
+      width: 90%;
+    }
+
+    table {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      
+      margin-right: 0px;
+      margin-left: 15px;
+      margin-top: 50px;
+
+    }
+     th{
+      width: 100px;
+      font-size: 10px;
+      
+     }
+
+     .one .descripcion{
+      height: 40px;
+     }
+
+td{
+  width: 220px;
+  font-size: 10px;
+ 
+}
+.space{
+height: 80px;
+
+
+
+}
+
+.spacetwo{
+  height: 60px;
+}
+
+.buttons{
+  background-color: #888;
+}
+
+.py-3 {
+  width: 180px;
+  height: 50px;
+ font-size: 13px;
+}
+    
   }

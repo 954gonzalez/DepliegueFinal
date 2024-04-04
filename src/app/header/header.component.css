@@ -417,67 +417,8 @@ a.selected{
   display: flex;
   margin-bottom: 20px;
 }
-@media screen and (max-width: 760px){
-  .body_move{
-      margin-left: 0px;
-  }
-  header{
-      width: 100%;
-      
-  }
 
-  .menu__side_move{
-      width: 80px;
-      left: -80px;
-  }
-}
-@media only screen and (max-width: 600px) {
-body {
-  font-size: 14px;
-}
 
-header {
-  height: 60px;
-  display: flex;
-  justify-content: center ;
-  align-items: center;
-}
-.saludo{
-  font-size: 10px;
-  margin-top: 30px;
-  position: relative;
-  right: 60px;
-}
-.saludo span{
-  display: none;
-}
-.icon__menu{
-  position: relative;
-  right: 100px;
-}
-.saludo h1{
-  width: 300px;
-  position: relative;
-  top: -5px;
-}
-.form{
-  display: none;
-}
-.menu__side {
-  width: 250px;
-  font-size: 16px;
-  border-right: 10px solid #631878;
-}
-
-.menu__side_move {
-  width: 60px;
-  left: -60px;
-}
-
-.body_move {
-  margin-left: 0;
-}
-}
 
 .modal{
   position: fixed;
@@ -772,8 +713,45 @@ button {
     flex-direction: column;
     align-items: center;
   }
-  @media screen and (max-width: 760px){
-    .body_move{
+  @media screen and (max-width: 992px)  {
+
+     .body_move{
+      margin-left: 0px;
+  }
+  header{
+      width: 100%;
+      
+  }
+
+  .menu__side_move{
+      width: 80px;
+      left: -80px;
+  }
+
+  body {
+    font-size: 14px;
+  }
+  .saludo{
+    position: relative;
+    left: 150px;
+  }
+  .usuarioInfoContainer .NombreUsu{
+    display: none;
+
+  } 
+  .usuarioInfoContainer{
+    left: 109px;
+  }
+  .usuarioNotificacion{
+    position: relative;
+    right: 100px;
+  }
+  .saludo h1{
+    font-size: 15px;
+  }
+}
+    @media screen and (max-width:768px)
+     {   .body_move{
         margin-left: 0px;
     }
     header{
@@ -785,8 +763,7 @@ button {
         width: 80px;
         left: -80px;
     }
-  }
-  @media only screen and (max-width: 600px) {
+
     body {
       font-size: 14px;
     }
@@ -796,10 +773,39 @@ button {
     }
     .usuarioInfoContainer .NombreUsu{
       display: none;
+
     } 
+    .usuarioInfoContainer{
+      left: 109px;
+    }
     .usuarioNotificacion{
       position: relative;
       right: 100px;
+    }
+    .saludo h1{
+      font-size: 15px;
+    }
+  }
+  @media only screen and (max-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+    .saludo{
+     
+      
+     
+    }
+
+    .modal{
+      left: 0px;
+    }
+    .usuarioInfoContainer .NombreUsu{
+      display: none;
+
+    } 
+    .usuarioNotificacion{
+      position: relative;
+      
     }
     header {
       height: 60px;
@@ -822,6 +828,7 @@ button {
     .icon__menu{
       position: relative;
       right: 100px;
+      display: none;
     }
     .saludo h1{
       width: 300px;
@@ -840,5 +847,11 @@ button {
     .menu__side_move {
       width: 60px;
       left: -60px;
+    }
+    .usuarioInfoContainer{
+      left: 0px;
+    }
+    .saludo h1{
+      font-size: 10px;
     }
   }

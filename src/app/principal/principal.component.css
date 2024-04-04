@@ -4,6 +4,11 @@
     display: flex;
     justify-content: space-around;
 }
+
+body{
+  
+    height: auto;
+}
 .container__card{
     max-width: 1200px;
     margin: auto;
@@ -417,78 +422,428 @@
     justify-content: space-around;
 }
 
-@media screen and (max-width: 768px) {   
-    .testimony{
-        width: 90%;
+@media screen and (max-width: 992px)  {
+    body{
+        max-width: 992px;
+        min-width: 769px;
+     }
+   
+    .testimony {
+        width: 83%;
+        height: 200px;
+        background-color: #631878;
     }
-    .testimony__course{
+
+    .testimony__course {
         height: 100%;
     }
-    .subtitle{
+
+    .subtitle {
         font-size: 18px;
+
     }
+
     .card__father {
-        width: calc(50% - 10px); /* El 10px es el espacio entre las tarjetas */
-        margin-bottom: 20px; 
+        width: calc(40% - 10px);
+        /* El 10px es el espacio entre las tarjetas */
+        margin-bottom: 20px;
+    
+
     }
-    .testimony__img{
+
+    .testimony__img {
         height: 150px;
         width: 150px;
     }
-    .testimony__review{
+
+    .testimony__review {
         width: 200px;
+        
     }
-    .body__card_back p{
+
+    .body__card_back p {
         height: 100px;
     }
+
     .card {
-        width: 300px; 
+        width: 320px;
         height: 350px;
+        display: flex;
+    }
+
+    .card h1 {
+        margin-right: 7px;
+    }
+
+    .testimony__course {
+        background-color: #631878;
+    }
+
+    .nosotros {
+        width: 100% ;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .body__card_front {
+        padding: 15px;
+        
+    }
+
+    .container__card {
+
+        width: 100%;
+        height: auto;
+       
+        margin-top: 100px;
+        margin-left: 30px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .all {
+        width: 768px;
+        height: auto;
+    }
+
+    .testimony__body {
+        width: 400px;
     }
 
 }
 
-@media screen and (max-width: 480px) {
-    .testimony{
-        width: 120%;
+@media screen  and (max-width:768px){
+    body{
+        max-width: 768px;
+        min-width: 481px;
+       
     }
 
-    .testimony__img{
-        height: 150px;
-        width: 150px;
+     
+    .testimony {
+        width: 83%;
+        height: 200px;
+        background-color: #631878;
     }
-    .testimony__review{
+
+    .body__card_back{
+        width: 172px;
+        height: 200px;
+        padding: 0px;
+        text-align: center;
+        
+        padding: 10px;
+    }
+
+    .body__card_back a{
+        top: 0px;
+    }
+    .body__card_back h1{
+        font-size: 14px;
+    }
+.card__back{
+    width: 200px;
+    height: 200px;
+    margin: 0px;
+
+}
+    
+.body__card_back input {
+    padding: 5px 15px;
+    margin-top: 0px;
+    font-size: 10px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background: #631878;
+    box-shadow: 1px 1px 30px -5px #631878;
+    border-radius: 10px;
+    transition: box-shadow 600ms;
+}
+
+    .body__card_back p{
+        font-size: 7px;
+        margin-top: 0px;
+        margin-bottom: 0px
+    }
+    .testimony__container{
+        width: 430px;
+        gap:0%
+    }
+    .testimony__course {
+        height: 100%;
+    }
+
+    .subtitle {
+        font-size: 15px;
+
+    }
+
+    .card__father {
+        width: calc(40% - 10px);
+        /* El 10px es el espacio entre las tarjetas */
+        margin-bottom: 20px;
+    
+
+    }
+    .testimony__arrow {
+        width: 60%;
+        cursor: pointer;
+        
+    }
+
+    .testimony__img {
+        height: 90px;
+        width: 90px;
+        margin-right: 0px;
+    }
+
+    .testimony__review {
+        width: 170px;
+      
+        height: 50px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    
+
+    .card {
         width: 200px;
+        height: 200px;
+        display: flex;
+    }
+
+    .card h1 {
+        margin-right: 7px;
+        font-size: 14px;
+    }
+
+    .testimony__course {
+        background-color: #631878;
+        width: 200px;
+        height: 20px;
+       
+    }
+
+    
+    .card__front{
+width: 200px;
+    }
+    
+
+    .nosotros {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .body__card_front {
+        padding: 10px;
+        
     }
 
     .container__card {
-        margin-top: 50px; 
-    }
-    .body__card_back p{
-        position: relative;
-        top: -30px;
-        height: 90px;
-        font-size: 15px;
-    }
-    .card {
-        width: 320px; 
-        height: 255px;
-    }
-    a{
-        position: relative;
-        top: -30px;
-        font-size: 14px;
-    }
-    .body__card_back{
-        width: 290px;
-    }
-    .trabajaConNosotros{
-        font-size: 15px;
-        position: relative;
-        top: -40px;
-    }
-    .body__card_front h1{
-        font-size: 18px;
+
+        width: 100%;
+        height: auto;
+       
+        margin-top: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
     }
 
+    .all {
+        width: 390px;
+        height: auto;
+        
+    }
+
+    .testimony__body {
+        width: 300px;
+        gap:4px
+    }
+
+    .testimony__texts{
+        height: 100px;
+    }
+
+    .testimony__texts h2{
+        font-size: 13px;
+        margin-bottom: 0%;
+    }
+    .testimony__texts p{
+        font-size: 10px;
+        margin-bottom: 0%;
+    }
+}
+
+
+@media screen  and (max-width:480px){
+    body{
+        max-width: 480px;
+        min-width: 300px;
+        
+     }
+
+    .testimony {
+        width: 100%;
+        height: 150px;
+        margin-left: 0px;
+       
+    }
+    .body__card_back{
+        width: 172px;
+        height: 200px;
+        padding: 0px;
+        text-align: center;
+        
+        padding: 10px;
+    }
+    .body__card_back h1{
+        font-size: 14px;
+    }
+.card__back{
+    width: 200px;
+    height: 200px;
+    margin: 0px;
+
+}
+    
+.body__card_back input {
+    padding: 5px 15px;
+    margin-top: 0px;
+    font-size: 10px;
+    cursor: pointer;
+    border: none;
+    color: white;
+    background: #631878;
+    box-shadow: 1px 1px 30px -5px #631878;
+    border-radius: 10px;
+    transition: box-shadow 600ms;
+}
+
+    .body__card_back p{
+        font-size: 7px;
+        margin-top: 0px;
+        margin-bottom: 0px
+    }
+    .testimony__container{
+        width: 430px;
+        gap:0%
+    }
+    .testimony__course {
+        height: 100%;
+    }
+
+    .subtitle {
+        font-size: 15px;
+
+    }
+
+    .card__father {
+        width: calc(50% - 10px);
+        /* El 10px es el espacio entre las tarjetas */
+        margin-bottom: 20px;
+    
+
+    }
+    .testimony__arrow {
+        width: 60%;
+        cursor: pointer;
+        
+    }
+
+    .testimony__img {
+        height: 90px;
+        width: 90px;
+        margin-right: 0px;
+    }
+
+    .testimony__review {
+        width: 170px;
+      
+        height: 50px;
+        font-size: 13px;
+        text-align: center;
+    }
+
+    
+
+    .card {
+        width: 200px;
+        height: 200px;
+        display: flex;
+    }
+
+    .card h1 {
+        margin-right: 7px;
+        font-size: 14px;
+    }
+
+    .testimony__course {
+        background-color: #631878;
+        width: 200px;
+        height: 20px;
+       
+    }
+
+    
+    .card__front{
+width: 200px;
+    }
+    
+
+    .nosotros {
+        width: 100%;
+        height: auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .body__card_front {
+        padding: 10px;
+        
+    }
+
+    .container__card {
+
+        width: 100%;
+        height: auto;
+       
+        margin-top: 50px;
+        margin-left: 0px;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .all {
+        width: 390px;
+        height: auto;
+        
+    }
+
+    .testimony__body {
+        width: 300px;
+        gap:4px
+    }
+
+    .testimony__texts{
+        height: 100px;
+    }
+
+    .testimony__texts h2{
+        font-size: 13px;
+        margin-bottom: 0%;
+    }
+    .testimony__texts p{
+        font-size: 10px;
+        margin-bottom: 0%;
+    }
 }

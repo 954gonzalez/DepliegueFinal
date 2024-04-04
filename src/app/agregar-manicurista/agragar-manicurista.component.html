@@ -114,32 +114,52 @@
   </div>
 </div>
 
-<table>
-  <thead>
-    <tr>
+<table >
+  <thead *ngIf="isSmallScreen()" >
+    
+    <tr *ngFor="let manicurista of manicuristas" class="one">
       <th>Nombre</th>
       <th>Apellido</th>
       <th>Email</th>
       <th>Celular</th>
       <th>Dirección</th>
-      <th>Descripción</th>
+      <th class="descripcion">Descripción</th>
+      <th>Acciones</th>
+      <div class="space"></div>
+    </tr>
+    
+  </thead>
+ 
+
+  <thead >
+    
+    <tr >
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Email</th>
+      <th>Celular</th>
+      <th>Dirección</th>
+      <th class="descripcion">Descripción</th>
       <th>Acciones</th>
     </tr>
+    
   </thead>
+
   <tbody>
-    <tr *ngFor="let manicurista of manicuristas">
+    <tr *ngFor="let manicurista of manicuristas" class="two">
       <td>{{ manicurista.nombre }}</td>
       <td>{{ manicurista.apellido }}</td>
       <td>{{ manicurista.emailPersonal }}</td>
       <td>{{ manicurista.celular }}</td>
       <td>{{ manicurista.direccion }}</td>
       <td>{{ manicurista.descripcion }}</td>
-      <td>
+      <td clas="buttons">
         <button class="btn-editar" (click)="editarManicurista(manicurista)">Editar</button>
         <button class="btn-desactivar" (click)="eliminarManicurista(manicurista.id_manicurista)">Eliminar</button>
       </td>
+      <div class="spacetwo"></div>
     </tr>
   </tbody>
+ 
 </table>
 <app-header-responsive></app-header-responsive>
-

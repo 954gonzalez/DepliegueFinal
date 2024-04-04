@@ -26,10 +26,10 @@ i{
   }
 
   /* Estilos para dispositivos móviles */
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 480px) {
     header {
         display: flex;
-        width: 141%;
+        width: 100%;
         align-items: center;
         justify-content: space-around;
         color: white;
@@ -43,8 +43,14 @@ i{
     }
 
   }
+
+  
   @media only screen and (min-width: 768px) {
     header {
       display: none; /* Ocultar el encabezado en dispositivos grandes */
     }
+
+
+
+
 }

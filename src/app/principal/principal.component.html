@@ -1,3 +1,10 @@
+
+
+
+    <body>
+        
+   
+
 <app-header></app-header>
 <!--ESTE es el codigo de el slider-->
 <div *ngIf="(auth.isClienteStatus() | async) || (auth.isAdminStatus() | async) || (auth.isLoggedIn() | async) === false">
@@ -127,3 +134,4 @@
 </section>
 <app-header-responsive></app-header-responsive>
 <app-footer></app-footer>
+</body>
