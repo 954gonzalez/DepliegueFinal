@@ -1,4 +1,4 @@
-import { Component, OnInit,HostListener } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UsuarioService } from '../service/usuario.service';
 import { Subject } from 'rxjs';
@@ -11,7 +11,6 @@ import Swal from 'sweetalert2';
   styleUrls: ['./agragar-manicurista.component.css']
 })
 export class AgragarManicuristaComponent implements OnInit {
-  screenWidth: number;
   form: FormGroup;
   editMode = false;
   selectedFile: File | null = null;
@@ -24,21 +23,36 @@ export class AgragarManicuristaComponent implements OnInit {
   private searchTerm$ = new Subject<string>();
 
   constructor(private fb: FormBuilder, private usuarioService: UsuarioService) {
-    this.screenWidth = window.innerWidth;
     this.form = this.fb.group({
      id_manicurista:[''],
       nombre: ['', Validators.required],
       apellido: ['', Validators.required],
       emailPersonal: ['', [Validators.required]],
-      emailApp: ['', Validators.required],
+      emailApp: ['NailsArt@gmail.com', Validators.required],
       contrasenaApp: ['', Validators.required],
       celular: ['', Validators.required],
       direccion: ['', Validators.required],
       descripcion: [''],
       fotoManicurista: [null]
     });
-    
+
+    this.form.get('nombre')?.valueChanges.subscribe(() => {
+      this.generateDefaultEmail();
+    });
+
+    this.form.get('apellido')?.valueChanges.subscribe(() => {
+      this.generateDefaultEmail();
+    });
   }
+
+  generateDefaultEmail(): void {
+    const nombre = this.form.get('nombre')?.value;
+    const apellido = this.form.get('apellido')?.value;
+    const email = ${nombre}${apellido}NailsArt@gmail.com.replace(/\s/g, '');  // Eliminamos toLowerCase()
+    this.form.get('emailApp')?.setValue(email);
+  }
+  
+  
 
   ngOnInit(): void {
     this.getManicuristas();
@@ -66,11 +80,6 @@ export class AgragarManicuristaComponent implements OnInit {
       modal.style.display = 'block';
     }
   }
-  isSmallScreen() {
-    return this.screenWidth <= 480;
-  }
-
-  
   
   cerrarModal(): void {
     const modal = document.getElementById('myModal');
@@ -157,7 +166,7 @@ export class AgragarManicuristaComponent implements OnInit {
     Object.keys(this.form.controls).forEach(controlName => {
       const control = this.form.controls[controlName];
       if (control.invalid) {
-        errorMessage += `\n- ${controlName}`;
+        errorMessage += \n- ${controlName};
       }
     });
 
@@ -275,4 +284,3 @@ export class AgragarManicuristaComponent implements OnInit {
     );
   }
 }
-
