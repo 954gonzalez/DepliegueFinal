@@ -11,6 +11,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
+  registrando = false;
   usuarioInfo: any;
   isMenuOpen = false;
   gravatarConfig: GravatarConfig;
@@ -108,10 +109,11 @@ export class HeaderComponent implements OnInit {
     this.selectedFileName = null;
     if (this.selectedFile && this.usuarioInfo) {
       const idUsuario = this.usuarioInfo.id;
+      
   
       // Generar un número aleatorio único para incluirlo como parámetro en la URL de la imagen
       const randomParam = Math.random();
-  
+      
       Swal.fire({
         title: '¿Deseas actualizar la foto de perfil?',
         icon: 'question',
@@ -121,7 +123,9 @@ export class HeaderComponent implements OnInit {
         confirmButtonColor:'#631878',
         cancelButtonText: 'No'
       }).then((result) => {
+        
         if (result.isConfirmed) {
+          this.registrando = true;
           if (this.selectedFile) {
             this.usuarioService.actualizarImagenUsuario(idUsuario, this.selectedFile)
               .subscribe(
@@ -140,6 +144,7 @@ export class HeaderComponent implements OnInit {
                     confirmButtonText: 'OK',
                     confirmButtonColor:'#631878'
                   });
+                  this.registrando = false;
                 },
                 error => {
                   console.error('Error al actualizar la imagen', error);
@@ -151,6 +156,7 @@ export class HeaderComponent implements OnInit {
                       confirmButtonText: 'OK',
                       confirmButtonColor:'#631878'
                   });
+                  this.registrando = false;
                 }
               );
           } else {

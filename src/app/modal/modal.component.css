@@ -116,3 +116,24 @@
   background-color: #f44336;
   color: white;
 }
+@media screen and (max-width: 767px) {
+
+  .cita-item {
+    display: flex;
+    flex-direction: row; /* Asegura que los elementos se coloquen en una fila */
+  }  
+    
+  .botones-acciones {
+    display: flex;
+    flex-direction: column; /* Asegura que los botones se apilen verticalmente */
+  }
+  
+  .boton-realizada {
+    order: -1; /* Coloca el botón "Realizada" antes en el orden visual */
+  }
+
+   .boton-realizada,
+   .boton-cancelada {
+    margin-bottom: 5px; 
+}
+}

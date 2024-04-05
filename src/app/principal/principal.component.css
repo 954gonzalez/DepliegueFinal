@@ -650,9 +650,9 @@ width: 200px;
 
         width: 100%;
         height: auto;
-       
+       align-items: center;
         margin-top: 50px;
-        margin-left: 0px;
+        margin-left: 80px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;
@@ -817,7 +817,7 @@ width: 200px;
         height: auto;
        
         margin-top: 50px;
-        margin-left: 0px;
+       margin-left: 0px;
         display: flex;
         justify-content: center;
         flex-wrap: wrap;

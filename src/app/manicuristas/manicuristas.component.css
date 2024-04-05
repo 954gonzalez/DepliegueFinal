@@ -284,6 +284,19 @@
   }
   
 
+
+
+  @media screen and (max-width:800px) {
+
+    .card-container {
+    margin-left: 121px;
+    height: auto;
+    flex-wrap: wrap;
+    gap: 50px;
+    display: flex;
+    }
+  }
+
   @media screen and (max-width: 480px)  {
 .card-container{
 width: 100%;
@@ -297,8 +310,7 @@ width: 100%;
 body{
   max-width: 480px;
   min-width: 300px;
-  background-color: #888;
-  height: auto;
+   height: auto;
 }
 .modal-img{
   text-align: center;

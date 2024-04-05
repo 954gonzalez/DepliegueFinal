@@ -11,6 +11,7 @@ declare var ePayco: any;
   styleUrls: ['./opciones-manicura.component.css']
 })
 export class OpcionesManicuraComponent implements OnInit {
+  registrando:boolean=false;
   manicuristas: any[] = [];
   servicios: any[] = [];
   filas: any[] = [];
@@ -28,6 +29,7 @@ export class OpcionesManicuraComponent implements OnInit {
   horaSeleccionada: string = '';
   horasDisponibles: string[] = [];
   idServicio: number = 0;
+  
 
   @ViewChild('fechaInput', { static: true }) fechaInput!: ElementRef;
 
@@ -196,14 +198,15 @@ console.log("duracion",this.duracionEnHoras);
 
 
     console.log('Datos de la cita a enviar:', datosCita);
-    
+
+   
     this.usuarioService.verificarDisponibilidadCita(fechaInicio,fechaFin).subscribe(
       (response) => {
         if (response.disponible) {
 
           
 console.log("siii");
-
+this.registrando=true;
 this.usuarioService.obtenerDetallesTransaccion(this.idServicio, this.usuarioInfo.id).subscribe(
   (data) => {
     console.log('Detalles de la transacción:', data);
@@ -212,15 +215,17 @@ this.usuarioService.obtenerDetallesTransaccion(this.idServicio, this.usuarioInfo
     this.usuarioService.createCita(datosCita).subscribe(
       (response) => {
         Swal.fire({
-          title: '¡Cita agendada!',
-          text: 'La cita se ha agendado correctamente.',
+          title: '¡Casi terminas!',
+          text: 'completa el metodo de pago!',
           icon: 'success',
           iconColor: '#631878'
         });
+        this.registrando=false;
       },
       (error) => {
         console.error('Error al agendar la cita:', error);
         Swal.fire('Error', 'Hubo un problema al agendar la cita. Por favor, inténtalo de nuevo.', 'error');
+        this.registrando=false;
       },
       () => {
         this.cerrarTodasModales();

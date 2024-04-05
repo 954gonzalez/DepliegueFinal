@@ -27,15 +27,23 @@ i{
 
   /* Estilos para dispositivos móviles */
 @media only screen and (max-width: 480px) {
+    body{
+        max-width: 600px;
+        min-width: 300px;
+        
+     }
     header {
+
         display: flex;
         width: 100%;
+       
         align-items: center;
         justify-content: space-around;
         color: white;
         background-color: #631878;
         position: absolute;
-        top: 136%;
+        top: 130%;
+        
         
     }
     i{
@@ -50,7 +58,7 @@ i{
       display: none; /* Ocultar el encabezado en dispositivos grandes */
     }
 
-
+  
 
 
 }

@@ -27,6 +27,7 @@
       <h2>{{ editMode ? 'Editar Manicurista' : 'Agregar Manicurista' }}</h2>
       <span class="close" (click)="cerrarModal()">&times;</span>
     </div>
+    <app-cargando *ngIf="registrando"></app-cargando>
     <form [formGroup]="form" (submit)="onSubmit()">
       <div class="form-group">
         <div class="input-container">
@@ -115,20 +116,7 @@
 </div>
 
 <table >
-  <thead *ngIf="isSmallScreen()" >
-    
-    <tr *ngFor="let manicurista of manicuristas" class="one">
-      <th>Nombre</th>
-      <th>Apellido</th>
-      <th>Email</th>
-      <th>Celular</th>
-      <th>Dirección</th>
-      <th class="descripcion">Descripción</th>
-      <th>Acciones</th>
-      <div class="space"></div>
-    </tr>
-    
-  </thead>
+ 
  
 
   <thead >
@@ -163,3 +151,4 @@
  
 </table>
 <app-header-responsive></app-header-responsive>
+

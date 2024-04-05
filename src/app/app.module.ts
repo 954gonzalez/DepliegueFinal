@@ -37,6 +37,7 @@ import { ChatBootComponent } from './chat-boot/chat-boot.component';
 import { AuthGuard } from './auth.guard';
 import { CatalogoComponent } from './catalogo/catalogo.component';
 import { HeaderResponsiveComponent } from './header-responsive/header-responsive.component';
+import { CargandoComponent } from './cargando/cargando.component';
 
 @NgModule({
   declarations: [
@@ -60,6 +61,7 @@ import { HeaderResponsiveComponent } from './header-responsive/header-responsive
     ChatBootComponent,
     CatalogoComponent,
     HeaderResponsiveComponent,
+    CargandoComponent,
   ],
   imports: [
     GravatarModule.forRoot({

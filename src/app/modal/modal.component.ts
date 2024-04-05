@@ -10,6 +10,7 @@ import Swal from 'sweetalert2';
   styleUrls: ['./modal.component.css']
 })
 export class ModalComponent implements OnInit {
+  registrando=false;
   citas: any[] = [];
 
   constructor(
@@ -26,16 +27,18 @@ export class ModalComponent implements OnInit {
     const fecha: string = this.data.selectedDate.toISOString().split('T')[0];
     const id_usuario: number = this.auth.id(); 
     const rol: string = this.auth.rol();
-
+    this.registrando=true;
     this.usuarioService.obtenerCitasPorFecha(fecha, id_usuario, rol).subscribe(
       (citas) => {
         this.citas = citas.map(cita => ({
           ...cita,
           canceladaVisible: cita.estado !== 'realizada' // Ocultar el botón "Cancelar" si la cita está realizada
         }));
+        this.registrando= false;
       },
       (error) => {
         console.error('Error al obtener las citas:', error);
+        this.registrando= false;
       }
     );
   }
