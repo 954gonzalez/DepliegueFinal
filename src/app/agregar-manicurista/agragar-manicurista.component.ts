@@ -48,7 +48,8 @@ export class AgragarManicuristaComponent implements OnInit {
   generateDefaultEmail(): void {
     const nombre = this.form.get('nombre')?.value;
     const apellido = this.form.get('apellido')?.value;
-    const email = ${nombre}${apellido}NailsArt@gmail.com.replace(/\s/g, '');  // Eliminamos toLowerCase()
+    const email = `${nombre}${apellido}NailsArt@gmail.com`.replace(/\s/g, "");
+    // Eliminamos toLowerCase()
     this.form.get('emailApp')?.setValue(email);
   }
   
